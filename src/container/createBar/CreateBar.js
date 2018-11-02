@@ -4,6 +4,7 @@ import OrbitControls from 'three-orbitcontrols';
 import Stats from 'stats.js';
 import * as dat from 'dat.gui';
 import * as d3 from 'd3';
+import BarChart from '../../component/timeLimit/TimeLimit';
 
 /**
  * 绘制BARCHART图形
@@ -48,14 +49,18 @@ class CreateBar extends Component {
           value: 100
         }
       ]
-    }
+    };
     const obj3D = new THREE.Object3D();
-    const width = 300;
-    const height = 300;
+    const width = 800;
+    const height = 800;
     this._obj3D = obj3D;
     this._width = width;
     this._height = height;
-
+    this.style = {
+      position: 'absolute',
+      top: 150,
+      right: 0
+    }
   };
 
   get obj3D() {
@@ -76,7 +81,11 @@ class CreateBar extends Component {
 
   render() {
     return (
-      <div ref='webglbox'></div>
+      <div style={{background: '#333', position: 'relative', width: 1920, height: 1080}}>
+        <BarChart/>
+        <div ref='webglbox' style={this.style}></div>
+      </div>
+
     )
   }
 
@@ -90,19 +99,18 @@ class CreateBar extends Component {
     let mesh = new THREE.Mesh(geometry, material);
     mesh.position.set(20 * i, data / 2, 0);
     this.obj3D.add(mesh);
-    this.obj3D.scale.set(0.6, 0.6, 0.6);
-    this.obj3D.rotation.y = -0.5 * Math.PI;
+    this.obj3D.scale.set(1, 1, 1);
+    this.obj3D.rotation.y = 2.3 * Math.PI;
   }
 
   componentDidMount() {
-    this.width = 100;
-    console.log(this._width);
+    this.width = 800;
     let webGlBox = this.refs.webglbox;
     // 生成3d渲染器，设置渲染器宽高背景色
     let renderer = this.renderer;
     renderer = new THREE.WebGLRenderer({antialias: true, alpha: true}); // 消除锯齿效果
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x333333);
+    renderer.setSize(this.width, this.height);
+    // renderer.setClearColor(0x333333);
     if (typeof window.devicePixelRatio === 'number')
       renderer.setPixelRatio(window.devicePixelRatio); //  设备上物理像素和设备独立像素的比 防止画面变模糊
 
@@ -126,7 +134,6 @@ class CreateBar extends Component {
     * 3D barChart
     *
     * */
-
 
     let datas = this.state.data;
     datas.sort((a, b) => {

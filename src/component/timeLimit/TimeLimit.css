@@ -1,0 +1,15 @@
+.time-limit-ul{
+  width:170px;
+  height:360px;
+  color:#fff;
+  font-size: 30px;
+  margin-left:626px;
+  top:185px;
+  background:url("/static/image/yaxisBg.png") no-repeat right;
+  padding-top:60px;
+  margin-top:100px;
+}
+.time-limit-ul>li{
+  height:130px;
+}
+
