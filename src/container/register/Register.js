@@ -1,8 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import * as THREE from 'three';
-import Orbitcontrols from 'three-orbitcontrols'
-import * as dat from 'dat.gui';
-import img from '../login/timg.jpeg';
+import Orbitcontrols from 'three-orbitcontrols';
 import nx from './NiagaraFalls3/negx.jpg';
 import px from './NiagaraFalls3/posx.jpg';
 import ny from './NiagaraFalls3/negy.jpg';
@@ -14,55 +12,50 @@ import pz from './NiagaraFalls3/posz.jpg';
  * 环境贴图demo
  * */
 class Register extends Component {
-  constructor() {
+  constructor () {
     super();
   }
 
-  render() {
+  render () {
     return (
       <div ref={'box'}>
         222222222222222222
       </div>
-    )
+    );
   }
 
-  componentDidMount() {
-    let box = this.refs.box;
-    let renderer = new THREE.WebGLRenderer({antialias: true});
+  componentDidMount () {
+    const box = this.refs.box;
+    const renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setSize(window.innerWidth, window.innerHeight);
     // renderer.setClearColor(new THREE.Color(0xfff000));
     box.appendChild(renderer.domElement);
-
-    let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
     camera.position.set(100, 20, 100);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
-    let scene = new THREE.Scene();
-    scene.background = new THREE.CubeTextureLoader().load([px, nx, py, ny, pz,nz]);
-    let light = new THREE.AmbientLight(0x606060);
+    const scene = new THREE.Scene();
+    scene.background = new THREE.CubeTextureLoader().load([px, nx, py, ny, pz, nz]);
+    const light = new THREE.AmbientLight(0x606060);
     light.position.set(1, 1, 1);
     scene.add(light);
     //平行光源
-    let directionalLight = new THREE.DirectionalLight(0xffffff);
+    const directionalLight = new THREE.DirectionalLight(0xffffff);
     directionalLight.position.set(1, 1, 1).normalize();
     scene.add(directionalLight);
-
     // let planeGeometry = new THREE.PlaneGeometry(200, 200, 10, 10);
     // let geoMaterial = new THREE.MeshLambertMaterial({color: 0xcccccc, wireframe: false});
     // let mesh = new THREE.Mesh(planeGeometry, geoMaterial);
     // mesh.rotation.x = -0.5 * Math.PI;
     // mesh.position.set(0, 0, -20);
     // scene.add(mesh);
-
-    let sphereGeometry = new THREE.SphereGeometry(20, 100, 100);
-    let sphereMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, envMap: scene.background});
-    let sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    const sphereGeometry = new THREE.SphereGeometry(20, 100, 100);
+    const sphereMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, envMap: scene.background});
+    const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
     sphereMesh.position.set(20, 20, 0);
     scene.add(sphereMesh);
-
-    let orbitcontrols = new Orbitcontrols(camera, renderer.domElement);
+    const orbitcontrols = new Orbitcontrols(camera, renderer.domElement);
     orbitcontrols.autoRotate = true;
     renderer.render(scene, camera);
-
     //
     // let texture1 = new THREE.TextureLoader().load(img);
     // let texture2 = new THREE.TextureLoader().load(img);
@@ -87,8 +80,7 @@ class Register extends Component {
     // }
     //
     // initGUI();
-
-    function animate() {
+    function animate () {
       renderer.render(scene, camera);
       orbitcontrols.update();
       requestAnimationFrame(animate);
