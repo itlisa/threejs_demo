@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
 import OrbitControls from 'three-orbitcontrols';
-import * as dat from 'dat.gui';
 import * as d3 from 'd3';
 import { Timer } from '@jusfoun-vis/common';
-// import TWEEN from '@tweenjs/tween.js';
 
 /**
  * 绘制BARCHART图形
@@ -49,8 +47,8 @@ class Bar extends Component {
       ]
     };
     const obj3D = new THREE.Object3D();
-    const width = 300;
-    const height = 500;
+    const width = 200;
+    const height = 300;
     this._obj3D = obj3D;
     this._width = width;
     this._height = height;
@@ -80,16 +78,18 @@ class Bar extends Component {
 
   renderer = '';
 
-  createBar (data, color, i) {
+  createBar (data, color, i, obj) {
     const geometry = new THREE.BoxBufferGeometry(20, data, 20);
     const material = new THREE.MeshPhongMaterial({
       color
     });
     const mesh = new THREE.Mesh(geometry, material);
     mesh.position.set(20 * i, data / 2, 0);
+    mesh.scale.set(0, 0, 0);
     this.obj3D.add(mesh);
-    this.obj3D.scale.set(1, 1, 1);
+    // this.obj3D.scale.set(1, 1, 1);
     this.obj3D.rotation.y = 2.3 * Math.PI;
+    obj.box = mesh;
   }
 
   componentDidMount () {
@@ -133,46 +133,17 @@ class Bar extends Component {
       .range([10, 100]);
     for (let i = 0; i < datas.length; i++) {
       const color = i % 2 ? 0xffffff : 0x006dcb;
-      this.createBar(x(datas[i].value), color, i, min, max);
+      this.createBar(x(datas[i].value), color, i, datas[i]);
     }
     scene.add(this.obj3D);
     const timer = new Timer(100, datas.length);
-    // let index = 0;
+    let index = 0;
     timer.on('timer', function () {
-      // const box = datas[index].mesh;
-      // let tween = new TWEEN.Tween({t: 0})
-      //   .to({t: 1}, 100) // Move to (300, 200) in 0.1 second.
-      //   .easing(TWEEN.Easing.Quadratic.Out) // Use an easing function to make the animation smooth.
-      //   .onUpdate(function (o) { // Called after tween.js updates 'coords'.
-      //     datas[index].scale.set(1, o.t, 1);
-      //   })
-      //   .onComplete(() => {
-      //     tween = undefined;
-      //   })
-      //   .start(); // Start the tween immediately.
-      // index++;
+      const box = datas[index].box;
+      box.scale.set(1, 1, 1);
+      index++;
     });
     timer.start();
-    const rotateY = {
-      y: 0.5 * Math.PI,
-      posX: 0,
-      posY: 0,
-      posZ: 0
-    };
-    const gui = new dat.GUI();
-    const me = this;
-    gui.add(rotateY, 'y', 0, 2 * Math.PI).onChange(function (e) {
-      me.obj3D.rotation.y = e * Math.PI;
-    });
-    gui.add(rotateY, 'posX', -400, 400).onChange(function (e) {
-      camera.position.x = e;
-    });
-    gui.add(rotateY, 'posY', -400, 400).onChange(function (e) {
-      camera.position.y = e;
-    });
-    gui.add(rotateY, 'posZ', -400, 400).onChange(function (e) {
-      camera.position.z = e;
-    });
     // 添加控制器
     const orbitControls = new OrbitControls(camera, renderer.domElement);
     orbitControls.autoRotate = false;

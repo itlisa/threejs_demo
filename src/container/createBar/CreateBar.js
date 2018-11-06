@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import BarChart from '../../component/timeLimit/TimeLimit';
 import Bar from '../../component/3dBar/3dbar';
 

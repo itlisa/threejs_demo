@@ -3,6 +3,8 @@ import * as THREE from 'three';
 import OrbitControls from 'three-orbitcontrols';
 import Stats from 'stats.js';
 import * as dat from 'dat.gui';
+import { createStore } from 'redux';
+import reducer from './reducer';
 
 /**
  * 绘制自定义3d图形
@@ -21,6 +23,13 @@ class Login extends Component {
   renderer = '';
 
   componentDidMount () {
+    const store = createStore(reducer);
+    store.dispatch({type: 'INCREMENT'});
+    console.log(store.getState());
+    // const listenerArr = [];
+    store.subscribe((listener) => {
+      console.log(listener);
+    });
     const webGlBox = this.refs.webglbox;
     // 生成3d渲染器，设置渲染器宽高背景色
     let renderer = this.renderer;
