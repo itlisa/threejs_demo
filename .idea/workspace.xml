@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3ac28b3-3b2e-45b7-9f9c-cccfb39b465d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/login/reducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/3dBar/3dbar.js" afterPath="$PROJECT_DIR$/src/component/3dBar/3dbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/container/createBar/CreateBar.js" afterPath="$PROJECT_DIR$/src/container/createBar/CreateBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/container/login/login.js" afterPath="$PROJECT_DIR$/src/container/login/login.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TimeLimit.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TimeLimit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/timeLimit/TimeLimit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="-809">
+              <caret line="133" column="9" lean-forward="true" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="9" />
               <folding>
                 <element signature="e#22#61#0" expanded="true" />
               </folding>
@@ -32,14 +28,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="3dbar.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="3dbar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/3dBar/3dbar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="74" column="25" lean-forward="true" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
+            <state relative-caret-position="402">
+              <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <element signature="e#300#844#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -60,8 +55,8 @@
       <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/container/login/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+            <state relative-caret-position="222">
+              <caret line="113" column="25" lean-forward="false" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="25" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -116,7 +111,6 @@
     <findStrings>
       <find>unit</find>
       <find>pointGeometry</find>
-      <find>obj3D</find>
       <find>guiFields</find>
       <find>_createBarChart</find>
       <find>diff</find>
@@ -128,6 +122,8 @@
       <find>orbitControls</find>
       <find>单位</find>
       <find>Timer</find>
+      <find>dat</find>
+      <find>obj3D</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,9 +147,9 @@
         <option value="$PROJECT_DIR$/config/webpack.config.dev.js" />
         <option value="$PROJECT_DIR$/src/container/login/reducer.js" />
         <option value="$PROJECT_DIR$/src/container/login/login.js" />
-        <option value="$PROJECT_DIR$/src/component/3dBar/3dbar.js" />
         <option value="$PROJECT_DIR$/src/container/createBar/CreateBar.js" />
         <option value="$PROJECT_DIR$/src/component/timeLimit/TimeLimit.js" />
+        <option value="$PROJECT_DIR$/src/component/3dBar/3dbar.js" />
       </list>
     </option>
   </component>
@@ -305,12 +301,12 @@
       <option name="presentableId" value="Default" />
       <updated>1541141034410</updated>
       <workItem from="1541141035985" duration="27645000" />
-      <workItem from="1541397671030" duration="8181000" />
+      <workItem from="1541397671030" duration="17185000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35826000" />
+    <option name="totallyTimeSpent" value="44830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -343,7 +339,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -468,27 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/container/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/3dBar/3dbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="74" column="25" lean-forward="true" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#300#844#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/container/authRoute/authRoute.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -511,10 +486,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/timeLimit/TimeLimit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="-809">
+          <caret line="133" column="9" lean-forward="true" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="9" />
           <folding>
             <element signature="e#22#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/container/login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="113" column="25" lean-forward="false" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/3dBar/3dbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
