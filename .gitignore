@@ -1,1 +1,5 @@
 node_modules/
+.idea
+.Ds_Store
+yarn-error.log
+yarn.lock
