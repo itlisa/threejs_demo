@@ -104,7 +104,8 @@ class Bar extends Component {
     mesh.position.set(20 * i, data / 2, 0);
     mesh.scale.set(0, 0, 0);
     me.obj3D.add(mesh);
-    this.obj3D.scale.set(1, 1, 1);
+    this.obj3D.scale.set(0.7, 0.7, 0.7);
+    this.fontObj.scale.set(0.7, 0.7, 0.7);
     me.obj3D.rotation.y = 2.3 * Math.PI;
     me.fontObj.rotation.y = 2.3 * Math.PI;
     // me.fontObj.rotation.z = 0.1 * Math.PI;

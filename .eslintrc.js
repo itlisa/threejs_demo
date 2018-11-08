@@ -46,8 +46,14 @@ module.exports = {
     'spaced-comment': 'off',
     'indent': 'off',
     'guard-for-in': 'off',
-    "object-curly-spacing": "off", // 大括号内是否允许不必要的空格
-    "no-multi-spaces":0,
-    "camelcase":0
+    'object-curly-spacing': 'off', // 大括号内是否允许不必要的空格
+    'no-multi-spaces': 0,
+    'camelcase': 0,
+    'no-tabs': 0,
+    'no-unused-vars': 0,
+    "arrow-parens":0,
+    "prefer-spread":0,
+    "comma-dangle":0,
+    "brace-style":0
   }
-}
+};

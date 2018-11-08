@@ -1,0 +1,145 @@
+/*panelBgc样式*/
+.panelBgc {
+  /*background-color: #0F1C39;*/
+}
+
+.rectBottomBor {
+  /*width: 482px;*/
+  height: 82px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background: url("img/borderBgc.png") center no-repeat;
+  background-size: 100% 100%;
+}
+
+.rectTopBor {
+  /*width: 482px;*/
+  height: 82px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: url("img/borderBgc.png") center no-repeat;
+  transform: rotate(180deg);
+  background-size: 100% 100%;
+}
+
+.PanelBgc_top {
+  position: absolute;
+  top: 0;
+}
+
+.PanelBgc_topBorder {
+  border: 1px solid transparent;
+  -webkit-border-image: linear-gradient(to right, rgb(18, 30, 69), rgb(20, 59, 129) 20%, rgb(26, 81, 167), rgb(106, 201, 250) 55%, rgb(23, 66, 144) 60%, rgb(20, 59, 129) 80%, rgb(18, 37, 81) 90%) 3 3 3; /* Safari 5 */
+  -o-border-image: linear-gradient(to right, rgb(18, 30, 69), rgb(20, 59, 129) 20%, rgb(26, 81, 167), rgb(106, 201, 250) 55%, rgb(23, 66, 144) 60%, rgb(20, 59, 129) 80%, rgb(18, 37, 81) 90%) 3 3 3; /* Opera */
+  border-image: linear-gradient(to right, rgb(18, 30, 69), rgb(20, 59, 129) 20%, rgb(26, 81, 167), rgb(106, 201, 250) 55%, rgb(23, 66, 144) 60%, rgb(20, 59, 129) 80%, rgb(18, 37, 81) 90%) 3 3 3;
+}
+
+.PanelBgc_bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+/*toolTip样式*/
+.toolTipClass {
+  border-radius: 10px;
+  border-bottom: none;
+  color: #fff;
+  font-size: 15px;
+  background-color: rgba(4, 28, 87, 0.8);
+  animation: scaleAin 1s;
+  -moz-animation: scaleAin 1s; /* Firefox */
+  -webkit-animation: scaleAin 1s; /* Safari 和 Chrome */
+  -o-animation: scaleAin 1s; /* Opera */
+  box-shadow: 1px 1px 40px 10px #0962bd;
+}
+
+@keyframes scaleAin {
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+.bottomCom {
+  height: 1px;
+  background-color: #2C7B9E;
+  position: absolute;
+}
+
+.toolTip_BottomBorder .bottomLeft {
+  bottom: 0;
+}
+
+.toolTip_BottomBorder .bottomLeft1 {
+  bottom: 0;
+  right: 0;
+}
+
+.bottomRight1 {
+  border-bottom: 1px solid rgba(4, 28, 87, 0.8);
+  border-right: 1px solid rgba(4, 28, 87, 0.8);
+  bottom: -10px;
+  left: 151px;
+  opacity: 0.5;
+  background-color: #0e1935AA;
+  transform: rotate(45deg);
+  /*background-color: #0e1935;*/
+}
+
+.bottomRight2 {
+  bottom: -7px;
+  left: 104px;
+  transform: rotate(-45deg);
+}
+
+.toolTipTopClass {
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #2C7B9E;
+}
+
+.toolTipTopClass span:nth-of-type(1) {
+  display: inline-block;
+  padding-left: 40px;
+  font-size: 36px;
+}
+
+.toolTipTopClass span:nth-of-type(2) {
+  display: inline-block;
+  font-size: 18px;
+  padding-left: 85px;
+}
+
+.toolTipTopClass span:nth-of-type(3) {
+  display: inline-block;
+  font-size: 34px;
+  color: #E59E1A;
+}
+
+.toolTipTopClass span:nth-of-type(4) {
+  display: inline-block;
+  font-size: 18px;
+}
+
+.toolTipBottomClass {
+  text-align: center;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  justify-content:center;
+}
+
+.toolTipBottomClass div:nth-of-type(1) {
+  border-right: 1px solid #2C7B9E;
+  padding-right: 30px;
+}
+
+.toolTipPClass {
+  margin-top: 12px;
+  margin-left: 25px;
+  font-size: 26px;
+  color: #F26A0D;
+}
