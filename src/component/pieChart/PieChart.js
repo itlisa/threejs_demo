@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import * as d3 from 'd3';
 
 class PieChart extends Component {
-  constructor (props) {
+  constructor(props) {
     super();
     this.state = {
       dataSet: [{
@@ -49,15 +49,15 @@ class PieChart extends Component {
     };
   }
 
-  render () {
-    return <div ref='comBox'></div>;
+  render() {
+    return ( < div
+    ref = 'comBox' > < /div>);
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const me = this;
     const dataSet = me.state.dataSet;
     const dom = me.refs.comBox;
-    console.log(dom);
     //创建虚拟数组，绘制外部弧线
     const updateData = function (arr) {
       const _updateArr = [];
@@ -91,7 +91,7 @@ class PieChart extends Component {
       .attr('width', width)
       .attr('height', height)
       .append('g')
-      .attr('transform', 'translate(150,120)');
+      .attr('transform', 'translate(0,0)');
     //创建弧生成器
     const arcInner = d3.arc()
       .innerRadius(56)
@@ -106,117 +106,130 @@ class PieChart extends Component {
     //转换数据格式
     const pieData = pie(dataSet);
     //开始绘制
-    const arc_g = svg.selectAll('g')
-      .data(pieData)
-      .enter()
-      .append('g');
-    const arcPath = arc_g
+    // const arc_g = svg.selectAll('g')
+    //   .data(pieData)
+    //   .enter()
+    //   .append('g');
+    // const arcPath = arc_g
+    //   .append('path')
+    //   .attr('d', function (d) {
+    //     return arcInner(d);
+    //   });
+    // arc_g.append('line')
+    //   .transition()
+    //   .duration(600)
+    //   //				.delay(function(d,i){
+    //   //					console.log(d,i)
+    //   //					return i*10
+    //   //				})
+    //   .attr('stroke', '#3e8eff')
+    //   .attr('stroke-dasharray', '1,1.5')
+    //   .attr('stroke-width', 2)
+    //   .attr('x1', function (d) {
+    //     return arcInner.centroid(d)[0] * 1.1;
+    //   })
+    //   .attr('y1', function (d) {
+    //     return arcInner.centroid(d)[1] * 1.1;
+    //   })
+    //   .attr('x2', function (d) {
+    //     return arcInner.centroid(d)[0] * 1.3;
+    //   })
+    //   .attr('y2', function (d) {
+    //     return arcInner.centroid(d)[1] * 1.3;
+    //   });
+    // //添加文字
+    // arc_g.append('text')
+    //   .transition()
+    //   .duration(600)
+    //   //				.delay(function(d,i){
+    //   //					console.log(d,i)
+    //   //					return i*70
+    //   //				})
+    //   .attr('transform', function (d) {
+    //     const x = arcInner.centroid(d)[0] * 1.5;
+    //     const y = arcInner.centroid(d)[1] * 1.48;
+    //     return 'translate(' + (x + 3) + ',' + (y + 5) + ')';
+    //   })
+    //   .attr('font-size', '14px')
+    //   .attr('font-family', '微软雅黑')
+    //   .style('text-anchor', 'middle')
+    //   .attr('fill', '#02f4ff')
+    //   .text(function (d) {
+    //     return Math.ceil(d.value / grossData * 100) + '%';
+    //   });
+    // //绘制外圆
+    // const arcOuter = d3.arc()
+    //   .innerRadius(76)
+    //   .outerRadius(77)
+    //   .padAngle(0.08);
+    // const arcLineData = pie(outerCircleData);
+    // const arcLine_g = svg.append('g')
+    //   .attr('transform', 'rotate(12)');
+    // arcLine_g.selectAll('path')
+    //   .data(arcLineData)
+    //   .enter()
+    //   .append('path')
+    //   .attr('d', function (d) {
+    //     return arcOuter(d);
+    //   })
+    //   .attr('fill', '#3e8eff');
+    // //添加图例
+    // const rects = svg.append('g')
+    //   .attr('transform', 'translate(170,-80)');
+    // const rect_g = rects.selectAll('g')
+    //   .data(dataSet)
+    //   .enter()
+    //   .append('g');
+    // rect_g.append('rect')
+    //   .transition()
+    //   .duration(600)
+    //   .delay(function (d, i) {
+    //     console.log(d, i);
+    //     return i * 50;
+    //   })
+    //   .attr('width', 20)
+    //   .attr('height', 8)
+    //   .attr('y', function (d, i) {
+    //     return 18 * i;
+    //   })
+    //   .attr('fill', function (d, i) {
+    //     return colors[i];
+    //   });
+    // rect_g.append('text')
+    //   .attr('font-size', '14px')
+    //   .attr('font-family', '微软雅黑')
+    //   .style('text-anchor', 'middle')
+    //   .attr('fill', '#30b4ff')
+    //   .attr('dy', 10)
+    //   .attr('y', function (d, i) {
+    //     return 18 * i;
+    //   })
+    //   .attr('x', 60)
+    //   .text(function (d) {
+    //     return d.name;
+    //   });
+    // arcPath
+    //   .transition()
+    //   .duration(1500)
+    //   .delay(function (d, i) {
+    //     return i * 50;
+    //   })
+    //   .attr('fill', function (d) {
+    //     return colors[d.data.id];
+    //   });
+    svg.append('g')
+      .attr('transform', 'translate(0,0)')
       .append('path')
-      .attr('d', function (d) {
-        return arcInner(d);
-      });
-    arc_g.append('line')
-      .transition()
-      .duration(600)
-      //				.delay(function(d,i){
-      //					console.log(d,i)
-      //					return i*10
-      //				})
-      .attr('stroke', '#3e8eff')
-      .attr('stroke-dasharray', '1,1.5')
-      .attr('stroke-width', 2)
-      .attr('x1', function (d) {
-        return arcInner.centroid(d)[0] * 1.1;
-      })
-      .attr('y1', function (d) {
-        return arcInner.centroid(d)[1] * 1.1;
-      })
-      .attr('x2', function (d) {
-        return arcInner.centroid(d)[0] * 1.3;
-      })
-      .attr('y2', function (d) {
-        return arcInner.centroid(d)[1] * 1.3;
-      });
-    //添加文字
-    arc_g.append('text')
-      .transition()
-      .duration(600)
-      //				.delay(function(d,i){
-      //					console.log(d,i)
-      //					return i*70
-      //				})
-      .attr('transform', function (d) {
-        const x = arcInner.centroid(d)[0] * 1.5;
-        const y = arcInner.centroid(d)[1] * 1.48;
-        return 'translate(' + (x + 3) + ',' + (y + 5) + ')';
-      })
-      .attr('font-size', '14px')
-      .attr('font-family', '微软雅黑')
-      .style('text-anchor', 'middle')
-      .attr('fill', '#02f4ff')
-      .text(function (d) {
-        return Math.ceil(d.value / grossData * 100) + '%';
-      });
-    //绘制外圆
-    const arcOuter = d3.arc()
-      .innerRadius(76)
-      .outerRadius(77)
-      .padAngle(0.08);
-    const arcLineData = pie(outerCircleData);
-    const arcLine_g = svg.append('g')
-      .attr('transform', 'rotate(12)');
-    arcLine_g.selectAll('path')
-      .data(arcLineData)
-      .enter()
-      .append('path')
-      .attr('d', function (d) {
-        return arcOuter(d);
-      })
-      .attr('fill', '#3e8eff');
-    //添加图例
-    const rects = svg.append('g')
-      .attr('transform', 'translate(170,-80)');
-    const rect_g = rects.selectAll('g')
-      .data(dataSet)
-      .enter()
-      .append('g');
-    rect_g.append('rect')
-      .transition()
-      .duration(600)
-      .delay(function (d, i) {
-        console.log(d, i);
-        return i * 50;
-      })
-      .attr('width', 20)
-      .attr('height', 8)
-      .attr('y', function (d, i) {
-        return 18 * i;
-      })
-      .attr('fill', function (d, i) {
-        return colors[i];
-      });
-    rect_g.append('text')
-      .attr('font-size', '14px')
-      .attr('font-family', '微软雅黑')
-      .style('text-anchor', 'middle')
-      .attr('fill', '#30b4ff')
-      .attr('dy', 10)
-      .attr('y', function (d, i) {
-        return 18 * i;
-      })
-      .attr('x', 60)
-      .text(function (d) {
-        return d.name;
-      });
-    arcPath
-      .transition()
-      .duration(1500)
-      .delay(function (d, i) {
-        return i * 50;
-      })
-      .attr('fill', function (d) {
-        return colors[d.data.id];
-      });
+      .attr('d', 'M30,100 Q130, 20 250,100 T470,100')
+      .attr('fill', 'transparent')
+      .attr('stroke', '#30b4ff')
+      .attr('stroke-width', 3)
+      .attr('id', 'path');
+    svg.append('circle')
+      .attr('rx', 20)
+      .attr('ry', 20)
+      .attr('r', 50);
+      // .style('fill','#')
   }
 }
 
